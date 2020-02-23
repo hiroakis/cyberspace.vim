@@ -39,8 +39,10 @@ let s:cs.red0           = ['#af0000', 124]
 " green
 let s:cs.emeraldgreen0  = ['#05f0c1', 48]
 let s:cs.lightgreen0    = ['#00ffaa', 49]
+" let s:cs.lightgreen0    = ['#90ee90', 49]
 let s:cs.green0         = ['#005f00', 22]
-let s:cs.palegreen0     = ['#b0eeb3', 107]
+let s:cs.limegreen0     = ['#32cd32', 77]
+let s:cs.palegreen0     = ['#b0eeb3', 120]
 
 " purple
 let s:cs.deeppurple0    = ['#6e4cad', 62]
@@ -83,16 +85,18 @@ call s:hi('CyberSpaceConstant', s:cs.bgnone, s:cs.blue0, 'none')
 
 """ Identifier
 call s:hi('CyberSpaceIdentifier', s:cs.bgnone, s:cs.deepbluegreen0, 'none')
-call s:hi('CyberSpaceFunction', s:cs.bgnone, s:cs.emeraldgreen0, 'none')
+call s:hi('CyberSpaceFunction', s:cs.bgnone, s:cs.palegreen0, 'none')
 
 """ Statement
-call s:hi('CyberSpaceStatement', s:cs.bgnone, s:cs.cyan0, 'none')
-call s:hi('CyberSpaceKeyword', s:cs.bgnone, s:cs.lightgreen0, 'none')
+call s:hi('CyberSpaceStatement', s:cs.bgnone, s:cs.lightgreen0, 'none')
+" call s:hi('CyberSpaceKeyword', s:cs.bgnone, s:cs.palegreen0, 'none')
+call s:hi('CyberSpaceKeyword', s:cs.bgnone, s:cs.cyan0, 'none')
 call s:hi('CyberSpaceOperator', s:cs.bgnone, s:cs.violet0, 'none')
 
 """ PreProc
-call s:hi('CyberSpacePreProc', s:cs.bgnone, s:cs.cyan0, 'none')
-call s:hi('CyberSpaceType', s:cs.bgnone, s:cs.lightgreen0, 'none')
+call s:hi('CyberSpacePreProc', s:cs.bgnone, s:cs.limegreen0, 'none')
+" call s:hi('CyberSpaceType', s:cs.bgnone, s:cs.cyan0, 'none')
+call s:hi('CyberSpaceType', s:cs.bgnone, s:cs.palegreen0, 'none')
 
 call s:hi('CyberSpaceSpecial', s:cs.bgnone, s:cs.violet0, 'none')
 
@@ -100,25 +104,32 @@ call s:hi('CyberSpaceUnderlined', s:cs.bgnone, s:cs.pink0, 'none')
 
 call s:hi('CyberSpaceVirtual', s:cs.palegreen0, s:cs.pink0, 'none')
 
-call s:hi('CyberSpaceTabLine', s:cs.palegreen0, s:cs.black0, 'none')
-call s:hi('CyberSpaceTabLineFill', s:cs.black0, s:cs.palegreen0, 'none')
-
 call s:hi('CyberSpaceSpellBad', s:cs.pink0, s:cs.fgnone, 'none')
 
 """ Todo
 call s:hi('CyberSpaceTodo', s:cs.pink0, s:cs.black0, 'bold')
 
 """ Status Line
-call s:hi('CyberSpaceStatusLine', s:cs.lightgreen0, s:cs.black0, 'none')
+call s:hi('CyberSpaceStatusLine', s:cs.deeppurple0, s:cs.white0, 'none')
 call s:hi('CyberSpaceStatusLineNC', s:cs.darkgray0, s:cs.white0, 'none')
 call s:hi('CyberSpaceWildMenu', s:cs.black0, s:cs.white0, 'none')
+
+""" Tab
+call s:hi('CyberSpaceTabLine', s:cs.blue0, s:cs.black0, 'none')
+call s:hi('CyberSpaceTabLineFill', s:cs.blue0, s:cs.black0, 'none')
+call s:hi('CyberSpaceTabLineSel', s:cs.black0, s:cs.white0, 'none')
+
+""" Search
+call s:hi('CyberSpaceSearch', s:cs.blue0, s:cs.black0, 'none')
+call s:hi('CyberSpaceIncSearch', s:cs.blue0, s:cs.black0, 'none')
+
 
 """ Fold
 call s:hi('CyberSpaceFolded', s:cs.darkgray0, s:cs.palegreen0, 'none')
 
 """ Error
-call s:hi('CyberSpaceError',   s:cs.cyan0, s:cs.black0, 'none')
-call s:hi('CyberSpaceWarning', s:cs.cyan0, s:cs.black0, 'none')
+call s:hi('CyberSpaceError',   s:cs.pink0, s:cs.black0, 'none')
+call s:hi('CyberSpaceWarning', s:cs.pink0, s:cs.black0, 'none')
 
 """ LSP
 call s:hi('CyberSpaceLspErrorText', s:cs.red0, s:cs.white0, 'none')
@@ -218,6 +229,16 @@ hi! link StatusLine   CyberSpaceStatusLine
 hi! link StatusLineNC CyberSpaceStatusLineNC
 hi! link WildMenu     CyberSpaceWildMenu
 
+""" Tab
+hi! link TabLine     CyberSpaceTabLine
+hi! link TabLineFill CyberSpaceTabLineFill
+hi! link TabLineSel  CyberSpaceTabLineSel
+
+""" Search
+hi! link Search     CyberSpaceSearch
+hi! link IncSearch  CyberSpaceIncSearch
+highlight QuickFixLine cterm=bold ctermfg=none ctermbg=none gui=none guifg=NONE guibg=NONE
+
 """ Folded
 hi! link Folded       CyberSpaceFolded
 hi! link FoldedColumn Folded
@@ -267,3 +288,44 @@ hi! link DiffAdded   DiffAdd
 hi! link LspErrorText CyberSpaceLspErrorText
 hi! link LspWarningText CyberSpaceLspWarningText
 
+
+""" ====================================================================
+
+call s:hi('CyberSpaceFgCyan', s:cs.bgnone, s:cs.cyan0, 'none')
+call s:hi('CyberSpaceFgLightGreen', s:cs.bgnone, s:cs.lightgreen0, 'none')
+call s:hi('CyberSpaceFgLimeGreen', s:cs.bgnone, s:cs.limegreen0, 'none')
+call s:hi('CyberSpaceFgEmeraldGreen', s:cs.bgnone, s:cs.emeraldgreen0, 'none')
+call s:hi('CyberSpaceFgDeepBlueGreen', s:cs.bgnone, s:cs.deepbluegreen0, 'none')
+call s:hi('CyberSpaceFgPaleGreen', s:cs.bgnone, s:cs.palegreen0, 'none')
+call s:hi('CyberSpaceFgVermilion', s:cs.bgnone, s:cs.vermilion0, 'none')
+call s:hi('CyberSpaceFgPink', s:cs.bgnone, s:cs.pink0, 'none')
+
+
+""" Go {{{
+
+" package import
+hi! link goDirective   CyberSpacePreProc
+" struct interface
+hi! link goDeclType    CyberSpacePreProc
+" var const type func
+hi! link goDeclaration CyberSpaceKeyword
+" defer go goto return break continue
+hi! link goStatement   CyberSpaceStatement
+" chan map bool string error
+hi! link goType        CyberSpaceType
+" bytes.Buffer io.Reader
+hi! link goExtraType   CyberSpaceType
+" append cap close copy len make...
+hi! link goBuiltins    CyberSpaceKeyword
+" iota true false nil
+hi! link goConstants   CyberSpaceFgPink
+
+augroup go-highlight
+  autocmd!
+  autocmd FileType go :hi link goExtraHighlight CyberSpaceFgVermilion
+  autocmd FileType go :call matchadd('goExtraHighlight', '\(error\|err\|return\|break\)')
+  autocmd FileType go :hi link goOperator CyberSpaceOperator
+  autocmd FileType go :call matchadd('goOperator', '\(!\|=\|:=\)')
+augroup END
+
+""" Go }}
