@@ -322,8 +322,6 @@ hi! link goConstants   CyberSpaceFgPink
 
 augroup go-highlight
   autocmd!
-  autocmd FileType go :hi link goExtraHighlight CyberSpaceFgVermilion
-  autocmd FileType go :call matchadd('goExtraHighlight', '\(error\|err\|return\|break\)')
   autocmd FileType go :hi link goOperator CyberSpaceOperator
   autocmd FileType go :call matchadd('goOperator', '\(!\|=\|:=\)')
 augroup END
