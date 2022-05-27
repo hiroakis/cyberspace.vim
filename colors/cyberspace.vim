@@ -2,10 +2,9 @@
 "
 " https://github.com/hiroakis/cyberspace.vim
 "
-" Copyright 2020, All rights reserved
+" Copyright 2022, All rights reserved
 "
 " Code licensed under the MIT license
-" https://zenorocha.mit-license.org
 "
 " @author Hiroaki Sano <hiroaki.sano.9stories@gmail.com>
 
